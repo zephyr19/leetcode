@@ -1,6 +1,6 @@
 # Array
 ### solved
-- easy: 3
+- easy: 5
 - medium: 0
 - hard: 0
 
@@ -23,6 +23,26 @@ public ListNode removeElements(ListNode head, int val) {
         else 					cur = cur.next;
     }
     return dummy.next;
+}
+```
+
+#### Binary Search Pattern
+
+> Used for:
+>
+> 1. Find the correct index for Val, whether the Val exists or not.
+> 2. Find the boundary between two sides.
+
+```java
+public int binarySearch(int[] arr, int val) {
+    int lo = 0, hi = arr.length - 1;
+    while (lo <= hi) {
+        int mi = lo + (hi - lo) / 2;  // prevent Interger overflow.
+        if (val == mi) return mi;
+        if (val > mi)  lo = mi + 1;
+        else		   hi = mi - 1;
+    }
+    return lo;
 }
 ```
 
