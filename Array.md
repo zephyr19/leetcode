@@ -1,6 +1,6 @@
 # Array
 ### solved
-- easy: 5
+- easy: 8
 - medium: 0
 - hard: 0
 
@@ -17,7 +17,7 @@
 ``` java
 public ListNode removeElements(ListNode head, int val) {
     ListNode dummy = new ListNode(0, head);
-    ListNode cur = dummy;    
+    ListNode cur = dummy;
     while(cur.next != null) {
         if(cur.next.val == val) cur.next = cur.next.next;
         else 					cur = cur.next;
@@ -46,5 +46,42 @@ public int binarySearch(int[] arr, int val) {
 }
 ```
 
+#### appropriately use `i++`, `%`, `/`
 
+>  Given two binary strings, return their sum (also a binary string).
+>
+> The input strings are both **non-empty** and contains only characters `1` or `0`.
+>
+> **Example 1:**
+>
+> ​	Input: a = "11", b = "1"
+>
+> ​	Output: "100"
 
+```java
+public String addBinary(String a, String b) {
+    StringBuilder sb = new StringBuilder();
+    int i = a.length() - 1, j = b.length() - 1, carry = 0;
+    while (i >= 0 || j >= 0 || carry == 1) {
+        int sum = carry;
+        if (i >= 0) sum += a.charAt(i--) - '0';
+        if (j >= 0) sum += b.charAt(j--) - '0';
+        sb.append(sum % 2);
+        carry = sum / 2;
+    }
+    return sb.reverse().toString();
+}
+```
+
+#### `ArrayList` vs `LinkedList`
+
+Prefer to use `ArrayList`: consume less memory, and perform well
+
+when you need to add element to front, do as follows:
+
+```java
+for (int i = 0; i < n; i++) {
+    list.add(val);
+}
+Collections.reverse(list);
+```
