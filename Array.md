@@ -1,6 +1,6 @@
 # Array
 ### solved
-- easy: 8
+- easy: 11
 - medium: 0
 - hard: 0
 
@@ -85,3 +85,7 @@ for (int i = 0; i < n; i++) {
 }
 Collections.reverse(list);
 ```
+
+#### Rotate array
+
+https://leetcode.com/problems/rotate-array/discuss/54250/Easy-to-read-Java-solution
