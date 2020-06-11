@@ -1,10 +1,4 @@
 # Array
-### solved
-- easy: 11
-- medium: 0
-- hard: 0
-
-## Tricks
 #### using a fake head to avoid edge cases (link list)
 
 > Edge cases could be:
